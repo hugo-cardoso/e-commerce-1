@@ -6,6 +6,7 @@
 	<link rel="stylesheet" href="css/grid.css">
 	<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="css/materialdesignicons.min.css">
+	<link rel="stylesheet" type="text/css" href="css/angular-carousel.css">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 	<title>Loja Template</title>
 </head>
@@ -47,9 +48,14 @@
 
 	<div class="container">
 
-		<section id="banner" class="hidden-xs">
+		
+		<section id="banner">
 
-			<div></div>
+			<ul rn-carousel rn-carousel-auto-slide="8" class="image">
+				<li ng-repeat="image in slides">
+					<div style="background-image: url('img/{{image}}.jpg');"></div>
+				</li>
+			</ul>
 
 		</section>
 
@@ -96,7 +102,7 @@
 		<div style="width: 100%; margin: 50px 0px; float: left; text-align: center;">
 
 			<button class="btn btn-primary btn-lg btn-outline" type="button">See More...</button>
-			
+
 		</div>
 
 	</div>
@@ -106,7 +112,7 @@
 	<div class="newsletter">
 
 		<div class="container">
-			
+
 			<div class="col-md-50 col-sm-50 text">
 
 				<span>ENTER YOUR EMAIL <strong>TO RECEIVE OFFER!</strong></span>
@@ -123,34 +129,67 @@
 			</div>
 
 		</div>
-		
+
 	</div>
 
 	<footer>
-		
+
 		<div class="container">
 
 			<div class="col-md-25 list">
-				
-				<span>Help</span>
+
+				<h3>Contact</h3>
+
+				<h4><i class="mdi mdi-phone-classic"></i> 0800 000 000</h4>
+				<address>
+					Opening Hours:<br>Monday to Friday 7:30 AM to 9:30 PM<br>Saturdays 08:00 AM to 08:00 PM
+				</address>
+
+			</div>
+
+			<div class="col-md-25 list">
+
+				<h3>Help</h3>
 				<ul>
-					<li>Item 1</li>
-					<li>Item 2</li>
-					<li>Item 3</li>
-					<li>Item 4</li>
-					<li>Item 5</li>
+					<li><i class="mdi mdi-chevron-right"></i>Delivery times</li>
+					<li><i class="mdi mdi-chevron-right"></i>Privacy policy</li>
+					<li><i class="mdi mdi-chevron-right"></i>Exchanges and Returns</li>
+					<li><i class="mdi mdi-chevron-right"></i>Terms and conditions of use</li>
 				</ul>
 
 			</div>
 
 			<div class="col-md-25 hidden-xs list">
-				
-				<span>Map</span>
+
+				<h3>Map</h3>
 				<ul>
-					<li>Menu 1</li>
-					<li>Menu 2</li>
-					<li>Menu 3</li>
-					<li>Menu 4</li>
+					<li><i class="mdi mdi-chevron-right"></i>Menu 1</li>
+					<li><i class="mdi mdi-chevron-right"></i>Menu 2</li>
+					<li><i class="mdi mdi-chevron-right"></i>Menu 3</li>
+					<li><i class="mdi mdi-chevron-right"></i>Menu 4</li>
+				</ul>
+
+			</div>
+
+			<div class="col-md-25 list">
+
+				<h3>Payment methods</h3>
+				<ul class="payment">
+					<li>
+						<img src="http://www.extra-imagens.com.br/App_Themes/Extra/img/icons/ic-visa.png">
+					</li>
+					<li>
+						<img src="http://www.extra-imagens.com.br/App_Themes/Extra/img/icons/ic-mastercard.png">
+					</li>
+					<li>
+						<img src="http://www.extra-imagens.com.br/App_Themes/Extra/img/icons/ic-american-express.png">
+					</li>
+					<li>
+						<img src="http://www.extra-imagens.com.br/App_Themes/Extra/img/icons/ic-dinners.png">
+					</li>
+					<li>
+						<img src="http://www.extra-imagens.com.br/App_Themes/Extra/img/icons/ic-paypal.png">
+					</li>
 				</ul>
 
 			</div>
@@ -162,5 +201,7 @@
 </body>
 <script src="lib/angularjs/angular.min.js"></script>
 <script src="lib/angularjs/angular-route.min.js"></script>
+<script src="lib/angularjs/angular-touch.js"></script>
+<script src="lib/angularjs/angular-carousel.js"></script>
 <script src="js/app.js"></script>
 </html>

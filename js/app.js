@@ -1,6 +1,7 @@
 angular
 .module('app', [
-	'ngRoute'
+	'ngRoute',
+	'angular-carousel'
 	])
 .controller('appController' , appController);
 
@@ -19,5 +20,7 @@ function appController($scope) {
 		"title":"Product 4"
 	}
 	];
+
+	$scope.slides = ["slide-1","slide-2"]
 
 }
