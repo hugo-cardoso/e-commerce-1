@@ -1,0 +1,375 @@
+/*******************************************/
+/*******************CORES*******************/
+/*******************************************/
+/*** 1: rgba(232, 233, 243, 1) | #e8e9f3 ***/
+/*** 2: rgba(206, 206, 206, 1) | #cecece ***/
+/*** 3: rgba(166, 166, 168, 1) | #a6a6a8 ***/
+/*** 4: rgba(39, 38, 53, 1)    | #272635 ***/
+/*** 5: rgba(177, 229, 242, 1) | #b1e5f2 ***/
+/*******************************************/
+/*******************************************/
+/*******************************************/
+
+body{
+	margin: 0px;
+	font-family: 'Roboto', sans-serif;
+	background-color: #E8E9F3;
+	background-image: url("../img/dimension.png");
+}
+
+button{
+	outline-width: 0;
+}
+
+/*Menu*/
+
+.menu{
+	height: 300px;
+	width: 100%;
+	background-color: #272635;
+	border-top: 3px solid #B1E5F2;
+}
+
+.menu .logo{
+	width: 100%;
+	height: 250px;
+	display: flex;
+}
+
+.menu .logo > .img-logo{
+	margin: auto;
+	height: 100px;
+	width: 100px;
+	background-color: #FFF;
+	border-radius: 50px;
+	transition: border-width 0.1s ease-in-out;
+}
+
+.menu .logo > .img-logo:hover{
+	border: 5px solid #B1E5F2;
+	transition: border-width 0.1s ease-in-out;
+}
+
+.menu .menu-items{
+	width: 100%;
+	height: 50px;
+	float: left;
+}
+
+.menu .menu-items > ul{
+	list-style: none;
+	padding: 0px;
+	width: 100%;
+	height: 50px;
+	margin: 0px;
+}
+
+.menu .menu-items > ul > li.item{
+	display: inline;
+	line-height: 45px;
+	height: 45px;
+	padding: 10px 20px;
+	color: #FFF;
+	cursor: pointer;
+	border-bottom: 0px solid #B1E5F2;
+	text-transform: uppercase;
+	transition: border-width 0.1s ease-in;
+}
+
+.menu .menu-items > ul > li.item:hover, .menu .menu-items > ul > li.item.active{
+	color: #B1E5F2;
+	border-bottom: 5px solid #B1E5F2;
+	transition: border-width 0.1s ease-in-out;
+}
+
+.menu .menu-items > ul > li > a{
+	height: 45px;
+}
+
+.menu .menu-items > ul > li.item-cart{
+	display: inline;
+	line-height: 45px;
+	height: 45px;
+	padding: 14px;
+	color: #FFF;
+	cursor: pointer;
+	border-bottom: 0px solid #B1E5F2;
+	text-transform: uppercase;
+	transition: border-width 0.1s ease-in;
+}
+
+/*Mobile Styles*/
+@media only screen and (max-width: 500px) {
+
+	.menu .logo{
+		width: 100%;
+		height: 80px !important;
+		display: flex;
+	}
+
+	.menu .logo > .img-logo{
+		width: 50px !important;
+		height: 50px !important;
+	}
+
+	.menu{
+		height: auto !important;
+		width: 100%;
+		background-color: #272635;
+	}
+
+	.menu-items{
+		height: auto !important;
+	}
+
+	.menu .menu-items > ul{
+		list-style: none;
+		padding: 0px;
+		width: 100%;
+		height: auto !important;
+		margin: 0px;
+	}
+
+	.menu .menu-items > ul > li{
+		display: table !important;
+		line-height: 25px !important;
+		height: 25px !important;;
+		padding: 14px;
+		color: #FFF;
+		cursor: pointer;
+		border-bottom: 0px solid #B1E5F2;
+		text-transform: uppercase;
+		width: 100%;
+	}
+}
+
+/*Banner*/
+
+#banner > div{
+	width: 100%;
+	height: 250px;
+	background-color: #FFF;
+}
+
+/*Products*/
+
+.title-section{
+	color: #272635;
+	text-align: center;
+	text-transform: uppercase;
+	align-content: center;
+}
+
+.divider > div{
+	height: 2px;
+	width: 100px;
+	background-color: #A6A6A8;
+	margin-bottom: 20px;
+}
+
+.padding-grid{
+	padding: 10px;
+}
+
+.box{
+	width: 100%;
+	background-color: #FFF;
+	border: 2px solid transparent;
+	-webkit-transition: 0.5s;
+	-webkit-box-shadow: 0px 2px 11px -2px rgba(0,0,0,0.43);
+	-moz-box-shadow: 0px 2px 11px -2px rgba(0,0,0,0.43);
+	box-shadow: 0px 2px 11px -2px rgba(0,0,0,0.43);
+}
+
+.box:hover{
+	border: 2px solid #272635;
+}
+
+.box img{
+	width: 100%;
+}
+
+.box .details{
+	padding: 5px;
+	display: flex;
+	height: 100px;
+}
+
+.box .details > h1{
+	margin: auto;
+}
+
+.box .pricing-two{
+	width: 100%;
+	height: 50px;
+}
+
+.box .pricing-two > div{
+	width: 49.99%;
+	height: 50px;
+	line-height: 50px;
+	text-align: center;
+	float: left;
+}
+
+.box .pricing-two > div:first-child{
+	text-decoration: line-through;
+	color: #CECECE;
+}
+
+.box .pricing-two > div:first-child::before{
+	content: "Of:"
+}
+
+.box .pricing-two > div:last-child::before{
+	content: "For:"
+}
+
+/*Mobile Styles*/
+@media only screen and (max-width: 500px) {
+
+	.padding-grid:first-child{
+		padding-left: 10px !important;
+	}
+
+}
+
+/*Newsletter*/
+
+.newsletter{
+	width: 100%;
+	background-color: #B1E5F2;
+	background-image: url("../img/dimension.png");
+}
+
+.newsletter .text{
+	display: flex; 
+	height: 75px;
+	font-size: 1.3rem;
+	font-weight: 300;
+}
+
+.newsletter .text > span{
+	margin: auto;
+	margin-right: 10px;
+}
+
+.newsletter .search-form{
+	margin: auto;
+	margin-left: 10px;
+	width: 100%;
+}
+
+.newsletter .search-form > input{
+	height: 50px;
+	padding: 5px;
+	width: 80%;
+	font-size: 1.5rem;
+	border: 2px solid #272635;
+	background-color: #FFF;
+	background-image: url("../img/dimension.png");
+	float: left;
+}
+
+.newsletter .search-form > input:focus{
+	outline-width: 0;
+}
+
+.newsletter .search-form > button{
+	width: 20%;
+	height: 50px;
+	background-color: #272635;
+	float: left;
+	border: none;
+	color: #FFF;
+}
+
+/*Mobile Styles*/
+@media screen and (max-width : 480px) {
+
+	.newsletter .text > span, .newsletter .search-form{
+		margin: auto !important;
+		margin-right: auto !important;
+	}
+
+	.newsletter .text{
+		font-size: 1rem;
+	}
+
+}
+
+/*Buttons*/
+
+.btn{
+	border: 0px;
+	background-color: #A6A6A8;
+	color: #FFF;
+	padding: 10px 20px;
+	-webkit-transition: 0.5s;
+	font-weight: 700;
+	text-transform: uppercase;
+}
+
+.btn.btn-lg{
+	font-size: 15px;
+	padding: 15px 25px;
+}
+
+.btn.btn-block{
+	width: 100%;
+}
+
+.btn.btn-primary{
+	background-color: #272635 !important;
+	color: #FFF;
+}
+
+.btn.btn-primary:hover{
+	background-color: #B1E5F2 !important;
+	color: #272635;
+}
+
+.btn.btn-primary.btn-outline{
+	border: 2px solid transparent;
+}
+
+.btn.btn-primary.btn-outline:hover{
+	border: 2px solid #272635;
+}
+
+/*Footer*/
+
+footer{
+	background-color: #272635;
+	height: auto;
+}
+
+footer > .container{
+	padding-top: 25px;
+	padding-bottom: 25px;
+}
+
+footer .list > span{
+	color: #B1E5F2;
+}
+
+footer ul{
+	margin: 0px;
+	padding: 0px;
+}
+
+footer ul > li{
+	list-style: none;
+	color: #E8E9F3;
+	padding: 5px 0px;
+	font-size: 0.9rem;
+}
+
+/*Mobile Styles*/
+@media screen and (max-width : 480px) {
+
+	footer .list{
+		text-align: center;
+	}
+
+}

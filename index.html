@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html ng-app="app">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<link rel="stylesheet" href="css/grid.css">
+	<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="css/materialdesignicons.min.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<title>Loja Template</title>
+</head>
+<body ng-controller="appController as app">
+
+	<nav class="menu">
+		<div class="container">
+			
+			<div class="logo">
+
+				<span class="img-logo"></span>
+
+			</div>
+
+			<div class="menu-items" align="center">
+				
+				<ul>
+					<li class="item active">
+						<a>Menu 1</a>
+					</li>
+					<li class="item">
+						<a>Menu 2</a>
+					</li>
+					<li class="item">
+						<a>Menu 3</a>
+					</li>
+					<li class="item">
+						<a>Menu 4</a>
+					</li>
+					<li class="item-cart">
+						<a>Cart (0)</a>
+					</li>
+				</ul>
+
+			</div>
+
+		</div>
+	</nav>
+
+	<div class="container">
+
+		<section id="banner" class="hidden-xs">
+
+			<div></div>
+
+		</section>
+
+		<section id="featured">
+
+			<h2 class="title-section">Featured</h2>
+
+			<div class="divider" align="center">
+				<div></div>
+			</div>
+
+			<!-- Products -->
+
+			<div class="products">
+
+				<div class="col-md-25 col-sm-50 padding-grid" ng-repeat="product in featured">
+
+					<div class="box">
+
+						<img src="https://placeholdit.imgix.net/~text?txtsize=40&txt=500%C3%97500&w=500&h=500">
+
+						<div class="details">
+							<h1>{{product.title}}</h1>
+						</div>
+						<div class="pricing-two">
+							<div>
+								<span>$</span>110,00
+							</div>
+							<div>
+								<span>$</span>99,90
+							</div>
+						</div>
+
+						<button class="btn btn-block btn-primary" type="button">BUY!</button>
+
+					</div>
+
+				</div>
+
+			</div>
+
+		</section>
+
+		<div style="width: 100%; margin: 50px 0px; float: left; text-align: center;">
+
+			<button class="btn btn-primary btn-lg btn-outline" type="button">See More...</button>
+			
+		</div>
+
+	</div>
+
+	<!-- Newsletter -->
+
+	<div class="newsletter">
+
+		<div class="container">
+			
+			<div class="col-md-50 col-sm-50 text">
+
+				<span>ENTER YOUR EMAIL <strong>TO RECEIVE OFFER!</strong></span>
+
+			</div>
+
+			<div class="col-md-50 col-sm-50" style="display: flex; height: 75px;">
+
+				<div class="search-form">
+					<input type="text"></input>
+					<button type="button">OK</button>
+				</div>
+
+			</div>
+
+		</div>
+		
+	</div>
+
+	<footer>
+		
+		<div class="container">
+
+			<div class="col-md-25 list">
+				
+				<span>Help</span>
+				<ul>
+					<li>Item 1</li>
+					<li>Item 2</li>
+					<li>Item 3</li>
+					<li>Item 4</li>
+					<li>Item 5</li>
+				</ul>
+
+			</div>
+
+			<div class="col-md-25 hidden-xs list">
+				
+				<span>Map</span>
+				<ul>
+					<li>Menu 1</li>
+					<li>Menu 2</li>
+					<li>Menu 3</li>
+					<li>Menu 4</li>
+				</ul>
+
+			</div>
+
+		</div>
+
+	</footer>
+
+</body>
+<script src="lib/angularjs/angular.min.js"></script>
+<script src="lib/angularjs/angular-route.min.js"></script>
+<script src="js/app.js"></script>
+</html>
