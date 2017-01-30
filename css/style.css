@@ -42,8 +42,10 @@ address{
 .menu{
 	height: 300px;
 	width: 100%;
-	background-color: #272635;
-	border-top: 3px solid #B1E5F2;
+	border-top: 3px solid black;
+	position: relative;
+	background-color: #E63946;
+	background-image: url("../img/dimension1.png");
 }
 
 .menu .logo{
@@ -62,7 +64,7 @@ address{
 }
 
 .menu .logo > .img-logo:hover{
-	border: 5px solid #B1E5F2;
+	border: 5px solid #A8DADC;
 	transition: border-width 0.1s ease-in-out;
 }
 
@@ -87,14 +89,15 @@ address{
 	padding: 10px 20px;
 	color: #FFF;
 	cursor: pointer;
-	border-bottom: 0px solid #B1E5F2;
+	border-bottom: 0px solid #A8DADC;
 	text-transform: uppercase;
 	transition: border-width 0.1s ease-in;
+	font-weight: 300;
 }
 
 .menu .menu-items > ul > li.item:hover, .menu .menu-items > ul > li.item.active{
-	color: #B1E5F2;
-	border-bottom: 5px solid #B1E5F2;
+	color: #F1FAEE;
+	border-bottom: 5px solid #F1FAEE;
 	transition: border-width 0.1s ease-in-out;
 }
 
@@ -107,11 +110,10 @@ address{
 	line-height: 45px;
 	height: 45px;
 	padding: 14px;
-	color: #FFF;
+	color: #F1FAEE;
 	cursor: pointer;
-	border-bottom: 0px solid #B1E5F2;
 	text-transform: uppercase;
-	transition: border-width 0.1s ease-in;
+	font-weight: 400;
 }
 
 /*Mobile Styles*/
@@ -120,7 +122,7 @@ address{
 	.menu-mobile {
 		width: 100%;
 		height: 70px;
-		background-color: #272635;
+		background-image: url("../img/dimension1.png");
 		position: fixed;
 		top: 0px;
 		left: 0px;
@@ -155,7 +157,7 @@ address{
 		width: 50px;
 		height: 50px;
 		margin: 10px;
-		background-color: rgba(0,0,0, 0.5);
+		background-image: url("../img/dimension3.png");
 		float: right;
 		display: flex;
 	}
@@ -189,7 +191,7 @@ address{
 	.side-menu-content{
 		width: 80vw;
 		height: 100vh;
-		background-color: #14131b;
+		background-image: url("../img/dimension3.png");
 		position: absolute;
 		z-index: 999999;
 		left: 0px;
@@ -209,9 +211,11 @@ address{
 
 	.side-menu-content > ul > li.item{
 		display: block;
-		color: #FFF;
+		color: #F1FAEE;
 		padding: 25px;
-		border-top: 1px solid #272635;
+		border-top: 1px solid #212121;
+		font-weight: 300;
+		font-size: 1.2rem;
 	}
 
 }
@@ -240,7 +244,7 @@ address{
 /*Products*/
 
 .title-section{
-	color: #272635;
+	color: black;
 	text-align: center;
 	text-transform: uppercase;
 	align-content: center;
@@ -249,7 +253,7 @@ address{
 .divider > div{
 	height: 2px;
 	width: 100px;
-	background-color: #A6A6A8;
+	background-color: #E63946;
 	margin-bottom: 20px;
 }
 
@@ -268,7 +272,7 @@ address{
 }
 
 .box:hover{
-	border: 2px solid #272635;
+	border: 2px solid black;
 }
 
 .box img{
@@ -323,7 +327,7 @@ address{
 
 .newsletter{
 	width: 100%;
-	background-color: #B1E5F2;
+	background-image: url("../img/dimension1.png");
 }
 
 .newsletter .text{
@@ -336,6 +340,7 @@ address{
 .newsletter .text > span{
 	margin: auto;
 	margin-right: 10px;
+	color: #FFF;
 }
 
 .newsletter .search-form{
@@ -349,7 +354,7 @@ address{
 	padding: 5px;
 	width: 80%;
 	font-size: 1.5rem;
-	border: 2px solid #272635;
+	border: 2px solid black;
 	background-color: #E8E9F3;
 	background-image: url("../img/dimension.png");
 	float: left;
@@ -362,7 +367,7 @@ address{
 .newsletter .search-form > button{
 	width: 20%;
 	height: 50px;
-	background-color: #272635;
+	background-color: black;
 	float: left;
 	border: none;
 	color: #FFF;
@@ -404,13 +409,12 @@ address{
 }
 
 .btn.btn-primary{
-	background-color: #272635 !important;
+	background-color: black !important;
 	color: #FFF;
 }
 
 .btn.btn-primary:hover{
-	background-color: #B1E5F2 !important;
-	color: #272635;
+	background-color: #E63946 !important;
 }
 
 .btn.btn-primary.btn-outline{
@@ -418,13 +422,13 @@ address{
 }
 
 .btn.btn-primary.btn-outline:hover{
-	border: 2px solid #272635;
+	border: 2px solid black;
 }
 
 /*Footer*/
 
 footer{
-	background-color: #272635;
+	background-color: black;
 	height: auto;
 }
 
