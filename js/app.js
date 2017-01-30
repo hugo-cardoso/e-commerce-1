@@ -3,7 +3,8 @@ angular
 	'ngRoute',
 	'angular-carousel'
 	])
-.controller('appController' , appController);
+.controller('appController' , appController)
+.controller('menuController' , menuController)
 
 function appController($scope) { 
 
@@ -22,5 +23,21 @@ function appController($scope) {
 	];
 
 	$scope.slides = ["slide-1","slide-2"]
+
+}
+
+function menuController($scope) {
+
+	$scope.menu = false;
+
+	$scope.toggleMenu = function(){
+
+		if($scope.menu){
+			$scope.menu = false;
+		}else{
+			$scope.menu = true;
+		}
+
+	}
 
 }

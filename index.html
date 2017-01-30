@@ -2,17 +2,17 @@
 <html ng-app="app">
 <head>
 	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
 	<link rel="stylesheet" href="css/grid.css">
 	<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="css/materialdesignicons.min.css">
 	<link rel="stylesheet" type="text/css" href="css/angular-carousel.css">
-	<link rel="stylesheet" type="text/css" href="css/style.css">
 	<title>Loja Template</title>
 </head>
 <body ng-controller="appController as app">
 
-	<nav class="menu">
+	<nav class="menu hidden-xs">
 		<div class="container">
 			
 			<div class="logo">
@@ -44,6 +44,47 @@
 			</div>
 
 		</div>
+	</nav>
+
+	<nav class="menu-mobile visible-xs" ng-controller="menuController">
+
+		<div class="sides">
+			<div class="logo"></div>
+		</div>
+		<div class="sides">
+			<div class="btn-toggle" ng-click="toggleMenu()">
+				<i class="mdi mdi-menu mdi-24px"></i>
+			</div>
+		</div>
+
+		<div class="side-menu" ng-class="{'active': menu}">
+
+			<div class="side-menu-bg" ng-click="toggleMenu()"></div>
+
+			<div class="side-menu-content">
+				
+				<ul>
+					<li class="item active">
+						<a>Menu 1</a>
+					</li>
+					<li class="item">
+						<a>Menu 2</a>
+					</li>
+					<li class="item">
+						<a>Menu 3</a>
+					</li>
+					<li class="item">
+						<a>Menu 4</a>
+					</li>
+					<li class="item-cart">
+						<a>Cart (0)</a>
+					</li>
+				</ul>
+
+			</div>
+			
+		</div>
+		
 	</nav>
 
 	<div class="container">

@@ -9,12 +9,28 @@
 /*******************************************/
 /*******************************************/
 /*******************************************/
+html{
+	height: 100%;
+}
 
 body{
 	margin: 0px;
 	font-family: 'Roboto', sans-serif;
 	background-color: #E8E9F3;
 	background-image: url("../img/dimension.png");
+	height: 100%;
+}
+
+@media only screen and (max-width: 480px) {
+
+	body{
+		padding-top: 70px;
+		margin: 0px;
+		font-family: 'Roboto', sans-serif;
+		background-color: #E8E9F3;
+		background-image: url("../img/dimension.png");
+	}
+
 }
 
 button{
@@ -105,46 +121,93 @@ address{
 /*Mobile Styles*/
 @media only screen and (max-width: 500px) {
 
-	.menu .logo{
+	.menu-mobile {
 		width: 100%;
-		height: 80px !important;
+		height: 70px;
+		background-color: #272635;
+		position: fixed;
+		top: 0px;
+		left: 0px;
+		z-index: 9999;
+	}
+
+	.menu-mobile > div.sides{
+		width: 49.99%;
+		height: 100%;
+		float: left;
+	}
+
+	.menu-mobile > div > div.logo{
+		width: 50px;
+		height: 50px;
+		margin: 10px;
+		background-color: #FFF;
+		border-radius: 25px;
+	}
+
+	.menu-mobile > div > div.btn-toggle{
+		width: 50px;
+		height: 50px;
+		margin: 10px;
+		background-color: rgba(0,0,0, 0.5);
+		float: right;
 		display: flex;
 	}
 
-	.menu .logo > .img-logo{
-		width: 50px !important;
-		height: 50px !important;
-	}
-
-	.menu{
-		height: auto !important;
-		width: 100%;
-		background-color: #272635;
-	}
-
-	.menu-items{
-		height: auto !important;
-	}
-
-	.menu .menu-items > ul{
-		list-style: none;
-		padding: 0px;
-		width: 100%;
-		height: auto !important;
-		margin: 0px;
-	}
-
-	.menu .menu-items > ul > li{
-		display: table !important;
-		line-height: 25px !important;
-		height: 25px !important;;
-		padding: 14px;
+	.menu-mobile > div > div.btn-toggle > i{
+		margin: auto;
 		color: #FFF;
-		cursor: pointer;
-		border-bottom: 0px solid #B1E5F2;
-		text-transform: uppercase;
-		width: 100%;
 	}
+
+	.side-menu{
+		width: 100vw;
+		height: 100vh;
+		position: fixed;
+		top: 0px;
+		left: -100vw;
+		z-index: 99999;
+		overflow: hidden;
+		transition: 1s;
+	}
+
+	.side-menu.active{
+		left: 0px;
+	}
+
+	.side-menu-bg{
+		width: 100%;
+		height: 100vh;
+		background-color: transparent;
+	}
+
+	.side-menu-content{
+		width: 80vw;
+		height: 100vh;
+		background-color: #14131b;
+		position: absolute;
+		z-index: 999999;
+		left: 0px;
+		top: 0px;
+	}
+
+	.side-menu-content > ul{
+		list-style: none;
+		margin: 0px;
+		width: 100%;
+		padding: 0px;
+	}
+
+	.side-menu-content > ul > li.item:first-child{
+		border-top: none;
+	}
+
+	.side-menu-content > ul > li.item{
+		display: block;
+		color: #FFF;
+		padding: 25px;
+		border-top: 1px solid #272635;
+	}
+
 }
 
 /*Banner*/
@@ -181,7 +244,7 @@ address{
 }
 
 .padding-grid{
-	padding: 10px;
+	padding: 10px !important;
 }
 
 .box{
@@ -241,9 +304,6 @@ address{
 /*Mobile Styles*/
 @media only screen and (max-width: 500px) {
 
-	.padding-grid:first-child{
-		padding-left: 10px !important;
-	}
 
 }
 
