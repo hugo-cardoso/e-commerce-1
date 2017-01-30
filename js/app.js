@@ -12,13 +12,13 @@ function appController($scope) {
 
 	$scope.featured = 
 	[{
-		"title":"Product 1"
+		"title":"Sapatênis Polo HPC Branco"
 	},{
-		"title":"Product 2"
+		"title":"Sapatênis Polo HPC Cinza"
 	},{
-		"title":"Product 3"
+		"title":"Mocassim Mr.Kitsch Drive Bailey Marrom"
 	},{
-		"title":"Product 4"
+		"title":"Camisa Lacoste Xadrez Vermelha"
 	}
 	];
 

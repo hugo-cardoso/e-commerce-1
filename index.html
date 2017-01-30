@@ -37,6 +37,9 @@
 						<a>Menu 4</a>
 					</li>
 					<li class="item-cart">
+						<a>MY ACCOUNT</a>
+					</li>
+					<li class="item-cart">
 						<a>Cart (0)</a>
 					</li>
 				</ul>
@@ -50,6 +53,7 @@
 
 		<div class="sides">
 			<div class="logo"></div>
+			<div class="cart">CART (0)</div>
 		</div>
 		<div class="sides">
 			<div class="btn-toggle" ng-click="toggleMenu()">
@@ -62,6 +66,8 @@
 			<div class="side-menu-bg" ng-click="toggleMenu()"></div>
 
 			<div class="side-menu-content">
+
+
 				
 				<ul>
 					<li class="item active">
@@ -75,9 +81,6 @@
 					</li>
 					<li class="item">
 						<a>Menu 4</a>
-					</li>
-					<li class="item-cart">
-						<a>Cart (0)</a>
 					</li>
 				</ul>
 
@@ -112,11 +115,11 @@
 
 			<div class="products">
 
-				<div class="col-md-25 col-sm-50 padding-grid" ng-repeat="product in featured">
+				<div class="col-lg-25 col-md-50 col-sm-50 padding-grid" ng-repeat="product in featured">
 
 					<div class="box">
 
-						<img src="https://placeholdit.imgix.net/~text?txtsize=40&txt=500%C3%97500&w=500&h=500">
+						<img ng-src="img/product-{{$index + 1}}.jpg">
 
 						<div class="details">
 							<h1>{{product.title}}</h1>
