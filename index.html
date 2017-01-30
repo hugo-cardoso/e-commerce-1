@@ -12,18 +12,13 @@
 </head>
 <body ng-controller="appController as app">
 
-	<nav class="menu hidden-xs">
-		<div class="container">
-			
-			<div class="logo">
-
-				<span class="img-logo"></span>
-
-			</div>
-
+	<div class="menu-top hidden-xs">
+		<div class="img-logo">
+			<span>LOGO</span>
 		</div>
+	</div>
 
-		<div class="container-fluid" style="background-image: url('img/dimension3.png');">
+	<div class="container-fluid menu-sub hidden-xs" ng-class="{'fixed': menuFixed}">
 			<div class="menu-items" align="center">
 				
 				<ul>
@@ -49,12 +44,13 @@
 
 			</div>
 		</div>
-	</nav>
 
 	<nav class="menu-mobile visible-xs" ng-controller="menuController">
 
 		<div class="sides">
-			<div class="logo"></div>
+			<div class="logo">
+				<span>LOGO</span>
+			</div>
 			<div class="cart">CART (0)</div>
 		</div>
 		<div class="sides">
@@ -98,8 +94,17 @@
 		<section id="banner">
 
 			<ul rn-carousel rn-carousel-auto-slide="8" class="image">
-				<li ng-repeat="image in slides">
-					<div style="background-image: url('img/{{image}}.jpg');"></div>
+				<li>
+					<div style="background-image: url('http://placehold.it/1000x250');"></div>
+				</li>
+				<li>
+					<div style="background-image: url('http://placehold.it/1000x250');"></div>
+				</li>
+				<li>
+					<div style="background-image: url('http://placehold.it/1000x250');"></div>
+				</li>
+				<li>
+					<div style="background-image: url('http://placehold.it/1000x250');"></div>
 				</li>
 			</ul>
 
@@ -121,7 +126,7 @@
 
 					<div class="box">
 
-						<img ng-src="img/product-{{$index + 1}}.jpg">
+						<img src="http://placehold.it/500x500">
 
 						<div class="details">
 							<h1>{{product.title}}</h1>
