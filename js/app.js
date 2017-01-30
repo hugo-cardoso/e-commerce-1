@@ -6,23 +6,36 @@ angular
 .controller('appController' , appController)
 .controller('menuController' , menuController)
 
-function appController($scope) { 
+function appController($scope, $window) { 
 
 	var vm = this;
 
 	$scope.featured = 
 	[{
-		"title":"Sapatênis Polo HPC Branco"
+		"title":"Shoes Polo HPC White"
 	},{
-		"title":"Sapatênis Polo HPC Cinza"
+		"title":"Shoes Polo HPC Gray"
 	},{
-		"title":"Mocassim Mr.Kitsch Drive Bailey Marrom"
+		"title":"Mocassim Mr.Kitsch Drive Bailey Brown"
 	},{
-		"title":"Camisa Lacoste Xadrez Vermelha"
+		"title":"Lacoste Red Chess Shirt"
 	}
 	];
 
 	$scope.slides = ["slide-1","slide-2"]
+
+	window.onscroll = function () {
+		var menuFixed = window.pageYOffset;
+
+		if (menuFixed > 150) {
+			$scope.menuFixed = true;
+		}else{
+			$scope.menuFixed = false;
+		}
+
+
+		$scope.$digest();
+	};
 
 }
 
