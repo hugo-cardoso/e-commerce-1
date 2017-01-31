@@ -1,45 +1,47 @@
 angular
 .module('app', [
 	'ngRoute',
-	'angular-carousel'
+	'angular-carousel',
+	'ngAnimate'
 	])
 .controller('appController' , appController)
 .controller('menuController' , menuController)
 
-function appController($scope, $window) { 
+function appController($scope, $location, $window) { 
 
 	var vm = this;
 
+	// Menu itens
+
+	// Products
+
 	$scope.featured = 
 	[{
-		"title":"Shoes Polo HPC White"
+		"title":"Shoes Polo HPC White",
+		"categoria": "Shoes"
 	},{
-		"title":"Shoes Polo HPC Gray"
+		"title":"Shoes Polo HPC Gray",
+		"categoria": "Shoes"
 	},{
-		"title":"Mocassim Mr.Kitsch Drive Bailey Brown"
+		"title":"Mocassim Mr.Kitsch Drive Bailey Brown",
+		"categoria": "Shoes"
 	},{
-		"title":"Lacoste Red Chess Shirt"
+		"title":"Lacoste Red Chess Shirt",
+		"categoria": "Shirt"
 	}
 	];
 
-	$scope.slides = ["slide-1","slide-2"]
+	// Change Router
 
-	window.onscroll = function () {
-		var menuFixed = window.pageYOffset;
+	$scope.go = function ( path ) {
+		$location.path( "/" + path );
 
-		if (menuFixed > 150) {
-			$scope.menuFixed = true;
-		}else{
-			$scope.menuFixed = false;
+		if(screen.width <= 480){
+
+			$scope.menu = false;
 		}
 
-
-		$scope.$digest();
 	};
-
-}
-
-function menuController($scope) {
 
 	$scope.menu = false;
 
@@ -52,5 +54,34 @@ function menuController($scope) {
 		}
 
 	}
+
+
+
+}
+
+function menuController($scope, $window, $location) {
+
+	// Menu items
+
+	$scope.menuItems = [{
+		Title: 'home',
+		LinkText: 'Home',
+	}, {
+		Title: 'category/mens',
+		LinkText: 'Mens'
+	}];
+
+	$scope.navClass = function (page) {
+		var currentRoute = $location.path().substring(1) || 'home';
+		return page === currentRoute ? 'active' : '';
+	};
+
+	// Menu Fixed on Scroll 150px+ (Only Desktop)
+
+	angular.element($window).on("scroll resize", function (e) {
+		$scope.$apply(function(){
+			$scope.menuFixed = $window.pageYOffset;
+		})
+	});
 
 }
