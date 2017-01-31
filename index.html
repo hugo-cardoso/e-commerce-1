@@ -12,176 +12,71 @@
 </head>
 <body ng-controller="appController as app">
 
-	<div class="menu-top hidden-xs">
-		<div class="img-logo">
-			<span>LOGO</span>
-		</div>
-	</div>
+	<div ng-controller="menuController">
+		<nav class="hidden-xs" >
 
-	<div class="container-fluid menu-sub hidden-xs" ng-class="{'fixed': menuFixed}">
-			<div class="menu-items" align="center">
-				
-				<ul>
-					<li class="item active">
-						<a>Menu 1</a>
-					</li>
-					<li class="item">
-						<a>Menu 2</a>
-					</li>
-					<li class="item">
-						<a>Menu 3</a>
-					</li>
-					<li class="item">
-						<a>Menu 4</a>
-					</li>
-					<li class="item-cart">
-						<a>MY ACCOUNT</a>
-					</li>
-					<li class="item-cart">
-						<a>Cart (0)</a>
-					</li>
-				</ul>
-
-			</div>
-		</div>
-
-	<nav class="menu-mobile visible-xs" ng-controller="menuController">
-
-		<div class="sides">
-			<div class="logo">
-				<span>LOGO</span>
-			</div>
-			<div class="cart">CART (0)</div>
-		</div>
-		<div class="sides">
-			<div class="btn-toggle" ng-click="toggleMenu()">
-				<i class="mdi mdi-menu mdi-24px"></i>
-			</div>
-		</div>
-
-		<div class="side-menu" ng-class="{'active': menu}">
-
-			<div class="side-menu-bg" ng-click="toggleMenu()"></div>
-
-			<div class="side-menu-content">
-
-
-				
-				<ul>
-					<li class="item active">
-						<a>Menu 1</a>
-					</li>
-					<li class="item">
-						<a>Menu 2</a>
-					</li>
-					<li class="item">
-						<a>Menu 3</a>
-					</li>
-					<li class="item">
-						<a>Menu 4</a>
-					</li>
-				</ul>
-
-			</div>
-			
-		</div>
-		
-	</nav>
-
-	<div class="container">
-
-		
-		<section id="banner">
-
-			<ul rn-carousel rn-carousel-auto-slide="8" class="image">
-				<li>
-					<div style="background-image: url('http://placehold.it/1000x250');"></div>
-				</li>
-				<li>
-					<div style="background-image: url('http://placehold.it/1000x250');"></div>
-				</li>
-				<li>
-					<div style="background-image: url('http://placehold.it/1000x250');"></div>
-				</li>
-				<li>
-					<div style="background-image: url('http://placehold.it/1000x250');"></div>
-				</li>
-			</ul>
-
-		</section>
-
-		<section id="featured">
-
-			<h2 class="title-section">Featured</h2>
-
-			<div class="divider" align="center">
-				<div></div>
+			<div class="menu-top">
+				<div class="img-logo">
+					<span>LOGO</span>
+				</div>
 			</div>
 
-			<!-- Products -->
+			<div class="container-fluid menu-sub" ng-class="{'fixed': menuFixed > 150 }">
+				<div class="menu-items" align="center">
 
-			<div class="products">
+					<ul>
+						<li ng-repeat="item in menuItems" ng-class="navClass('{{item.Title}}')" class="item" ng-click="go(item.Title)">
+							<a>{{item.LinkText}}</a>
+						</li>
+						<li class="item-cart">
+							<a>My Account</a>
+						</li>
+						<li class="item-cart">
+							<a>Cart (0)</a>
+						</li>
+					</ul>
 
-				<div class="col-lg-25 col-md-50 col-sm-50 padding-grid" ng-repeat="product in featured">
+				</div>
+			</div>
 
-					<div class="box">
+		</nav>
 
-						<img src="http://placehold.it/500x500">
+		<nav class="menu-mobile visible-xs">
 
-						<div class="details">
-							<h1>{{product.title}}</h1>
-						</div>
-						<div class="pricing-two">
-							<div>
-								<span>$</span>110,00
-							</div>
-							<div>
-								<span>$</span>99,90
-							</div>
-						</div>
+			<div class="sides">
+				<div class="logo">
+					<span>LOGO</span>
+				</div>
+				<div class="cart">CART (0)</div>
+			</div>
+			<div class="sides">
+				<div class="btn-toggle" ng-click="toggleMenu()">
+					<i class="mdi mdi-menu mdi-24px"></i>
+				</div>
+			</div>
 
-						<button class="btn btn-block btn-primary" type="button">BUY!</button>
+			<div class="side-menu" ng-class="{'active': menu}">
 
-					</div>
+				<div class="side-menu-bg" ng-click="toggleMenu()"></div>
+
+				<div class="side-menu-content">
+
+
+
+					<ul>
+						<li ng-repeat="item in menuItems" ng-class="navClass('{{item.Title}}')" class="item" ng-click="go(item.Title)">
+							<a>{{item.LinkText}}</a>
+						</li>
+					</ul>
 
 				</div>
 
 			</div>
 
-		</section>
-
-		<div style="width: 100%; margin: 50px 0px; float: left; text-align: center;">
-
-			<button class="btn btn-primary btn-lg btn-outline" type="button">See More...</button>
-
-		</div>
-
+		</nav>
 	</div>
 
-	<!-- Newsletter -->
-
-	<div class="newsletter">
-
-		<div class="container">
-
-			<div class="col-md-50 col-sm-50 text">
-
-				<span>ENTER YOUR EMAIL <strong>TO RECEIVE OFFER!</strong></span>
-
-			</div>
-
-			<div class="col-md-50 col-sm-50" style="display: flex; height: 75px;">
-
-				<div class="search-form">
-					<input type="text"></input>
-					<button type="button">OK</button>
-				</div>
-
-			</div>
-
-		</div>
-
-	</div>
+	<div class="container-fluid" id="view" ng-view></div>
 
 	<footer>
 
@@ -254,5 +149,8 @@
 <script src="lib/angularjs/angular-route.min.js"></script>
 <script src="lib/angularjs/angular-touch.js"></script>
 <script src="lib/angularjs/angular-carousel.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular-animate.min.js"></script>
 <script src="js/app.js"></script>
+<script src="app/router.config.js"></script>
+<script src="app/pages/controllers/mensController.js"></script>
 </html>
