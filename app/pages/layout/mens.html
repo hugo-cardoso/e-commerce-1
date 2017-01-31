@@ -1,0 +1,80 @@
+<div class="container">
+
+	<section id="mens">
+
+		<h2 class="title-section">Mens</h2>
+
+		<div class="divider" align="center">
+			<div></div>
+		</div>
+
+		<!-- Products -->
+
+		<div class="col-md-25" style="padding-right: 10px; padding-top: 10px;">
+
+			<div style="width: 100%; height: auto; background-image: url('img/dimension3.png'); border: 2px solid #FFF; padding: 25px; ">
+
+				<h3 style="margin: 0px; color: #FFF; font-weight: 300; padding-bottom: 10px;">Filters</h3>
+
+				<div class="filter" style="width: 100%;">
+
+					<input id='shoes' type='checkbox' ng-model="search['Shoes']" ng-click="updatePag()" />
+					<label for='shoes'><span></span>
+						Shoes
+						<ins><i>Shoes</i></ins>
+					</label>
+
+					<input id='shirt' type='checkbox' ng-model="search['Shirt']" ng-click="updatePag()" />
+					<label for='shirt'><span></span>
+						Shirt
+						<ins><i>Shirt</i></ins>
+					</label>
+
+				</div>
+
+			</div>
+
+		</div>
+
+		<div class="col-md-75">
+
+			<div class="products">
+
+				<div class="col-lg-33 col-md-50 col-sm-50 padding-grid product" ng-repeat="product in featured | filter:searchBy() | startFrom:(currentPage-1)*entryLimit | limitTo:entryLimit | filter:query as filtered">
+
+					<div class="box">
+
+						<img src="img/thumbnail-placelholder.png">
+
+						<div class="details">
+							<h1>{{product.title}}</h1>
+						</div>
+						<div class="pricing-two">
+							<div>
+								<span>$</span>110,00
+							</div>
+							<div>
+								<span>$</span>99,90
+							</div>
+						</div>
+
+						<button class="btn btn-block btn-primary" type="button">BUY!</button>
+
+					</div>
+
+				</div>
+
+			</div>
+
+			<div style="width: 100%; margin: 25px 0px; float: left; text-align: center;">
+
+				<button ng-click="currentPage = currentPage - 1" class="btn btn-primary">Prev</button>
+				<button ng-click="currentPage = currentPage + 1" class="btn btn-primary">Prox</button>
+				
+			</div>
+
+		</div>
+
+	</section>
+
+</div>

@@ -1,0 +1,72 @@
+<div class="container">
+
+	<section id="banner">
+
+		<ul rn-carousel rn-carousel-auto-slide="8" class="image">
+			<li>
+				<div style="background-image: url('img/slide-placelholder.png');"></div>
+			</li>
+			<li>
+				<div style="background-image: url('img/slide-placelholder.png');"></div>
+			</li>
+			<li>
+				<div style="background-image: url('img/slide-placelholder.png');"></div>
+			</li>
+			<li>
+				<div style="background-image: url('img/slide-placelholder.png');"></div>
+			</li>
+		</ul>
+
+	</section>
+
+	<section id="featured">
+
+		<h2 class="title-section">Featured</h2>
+
+		<div class="divider" align="center">
+			<div></div>
+		</div>
+
+		<!-- Products -->
+
+		<div class="products">
+
+			<div class="col-lg-25 col-md-50 col-sm-50 padding-grid product" ng-repeat="product in featured">
+
+				<div class="box">
+
+					<img src="img/thumbnail-placelholder.png">
+
+					<div class="details">
+						<h1>{{product.title}}</h1>
+					</div>
+					<div class="pricing-two">
+						<div>
+							<span>$</span>110,00
+						</div>
+						<div>
+							<span>$</span>99,90
+						</div>
+					</div>
+
+					<button class="btn btn-block btn-primary" type="button">BUY!</button>
+
+				</div>
+
+			</div>
+
+		</div>
+
+	</section>
+
+	<div style="width: 100%; margin: 50px 0px; float: left; text-align: center;">
+
+		<button class="btn btn-primary btn-lg btn-outline" type="button">See More...</button>
+
+	</div>
+
+</div>
+
+<!-- Newsletter -->
+
+<div ng-include="'app/pages/components/newsletter.html'"></div>
