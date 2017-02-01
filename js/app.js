@@ -2,70 +2,23 @@ angular
 .module('app', [
 	'ngRoute',
 	'angular-carousel',
-	'ngAnimate'
+	'ngAnimate',
+	'angular.filter',
+	'angularUtils.directives.dirPagination'
 	])
 .controller('appController' , appController)
 .controller('menuController' , menuController)
 
-function appController($scope, $location, $window) { 
+function appController($scope, $location, $window, $http, $filter,$timeout) { 
 
 	var vm = this;
 
-	// Menu itens
-
 	// Products
 
-	$scope.featured = 
-	[{
-		"title":"Shoes Polo HPC White",
-		"category": "Shoes",
-		"gender": "M"
-	},{
-		"title":"Shoes Polo HPC Gray",
-		"category": "Shoes",
-		"gender": "M"
-	},{
-		"title":"Mocassim Mr.Kitsch Drive Bailey Brown",
-		"category": "Shoes",
-		"gender": "M"
-	},{
-		"title":"Lacoste Red Chess Shirt",
-		"category": "Shirt",
-		"gender": "M"
-	},{
-		"title":"Mocassim Mr.Kitsch Drive Bailey Brown",
-		"category": "Shoes",
-		"gender": "M"
-	},{
-		"title":"Lacoste Red Chess Shirt",
-		"category": "Shirt",
-		"gender": "M"
-	},{
-		"title":"Lacoste Red Chess Shirt",
-		"category": "Shirt",
-		"gender": "F"
-	},{
-		"title":"Lacoste Red Chess Shirt",
-		"category": "Shirt",
-		"gender": "F"
-	},{
-		"title":"Lacoste Red Chess Shirt",
-		"category": "Shirt",
-		"gender": "F"
-	},{
-		"title":"Lacoste Red Chess Shirt",
-		"category": "Shirt",
-		"gender": "F"
-	},{
-		"title":"Lacoste Red Chess Shirt",
-		"category": "Shirt",
-		"gender": "F"
-	},{
-		"title":"Lacoste Red Chess Shirt",
-		"category": "Shirt",
-		"gender": "F"
-	}
-	];
+	$http.get("data.json")
+	.then(function(response) {
+		$scope.products = response.data;
+	});
 
 	// Change Router
 
@@ -78,6 +31,8 @@ function appController($scope, $location, $window) {
 		}
 
 		$window.scrollTo(0, 0);
+
+		$scope.pag
 
 	};
 
@@ -93,33 +48,68 @@ function appController($scope, $location, $window) {
 
 	}
 
+	$scope.setFilter = function(gender,category){
+
+		$scope.filterGender = gender;
+		$scope.filterCategory = category;
+
+	}
+
+	$scope.scrollTop = function(){
+		$window.scrollTo(0, 0);
+		console.log("Top");
+	}
+
+	$scope.cart = 0;
+
+	$scope.addCart = function(price){
+		$scope.cart = $scope.cart + price;
+		$timeout(function(){
+			$scope.$apply();
+		})
+		console.log($scope.cart);
+	}
+
 
 
 }
 
-function menuController($scope, $window, $location) {
+function menuController($scope, $window, $location, $timeout) {
 
 	// Menu items
 
 	$scope.menuItems = [{
 		Title: 'home',
-		LinkText: 'Home',
+		LinkText: 'Home'
 	}, {
-		Title: 'category/mens',
+		Title: 'mens/categories',
 		LinkText: 'Mens'
 	}];
 
 	$scope.navClass = function (page) {
-		var currentRoute = $location.path().substring(1) || 'home';
-		return page === currentRoute ? 'active' : '';
+
+		var page1 = page.split("/");
+
+		var currentRoute = $location.path().split("/")[1];
+
+		return page1[0] === currentRoute? 'active' : '';
+
 	};
 
 	// Menu Fixed on Scroll 150px+ (Only Desktop)
 
 	angular.element($window).on("scroll resize", function (e) {
-		$scope.$apply(function(){
-			$scope.menuFixed = $window.pageYOffset;
+		$scope.menuFixed = $window.pageYOffset;
+
+		$timeout(function(){
+			$scope.$apply();
 		})
+
+		$scope.$digest();
+	});
+
+	$scope.$on('$destroy', function() {
+		window.onscroll = null;
 	});
 
 }
