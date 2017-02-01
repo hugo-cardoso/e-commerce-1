@@ -10,7 +10,7 @@ angular
 	};
 });
 
-function mensController($scope, $location, $filter, filterFilter, $timeout) {
+function mensController($scope, $location, $filter, filterFilter, $timeout, $window) {
 
 	$scope.search = {"Shoes":true,"Shirt":true};
 
