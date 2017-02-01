@@ -31,25 +31,31 @@
 
 		<div class="products">
 
-			<div class="col-lg-25 col-md-50 col-sm-50 padding-grid product" ng-repeat="product in featured | limitTo: 4">
+			<div class="col-lg-25 col-md-50 col-sm-50 padding-grid product" ng-repeat="product in products | limitTo: 4">
 
 				<div class="box">
 
-					<img src="img/thumbnail-placelholder.png">
+					<!-- <img src="http://i1.adis.ws/i/boohooamplience/mzz75964_sand_xl?$category_page$&w=500&h=500"> -->
+
+					<div style="max-width: 100%; height: 250px; overflow: hidden; position: relative;">
+
+						<img style="position: absolute;  left: 50%;  top: 50%;  height: 100%;  width: auto;  -webkit-transform: translate(-50%,-50%);      -ms-transform: translate(-50%,-50%);transform: translate(-50%,-50%);" ng-src="{{product.imgThumbnail || 'img/thumbnail-placelholder.png'}}">
+
+					</div>
 
 					<div class="details">
 						<h1>{{product.title}}</h1>
 					</div>
 					<div class="pricing-two">
 						<div>
-							<span>$</span>110,00
+							{{product.price | currency }}
 						</div>
 						<div>
-							<span>$</span>99,90
+							{{product.of | currency }}
 						</div>
 					</div>
 
-					<button class="btn btn-block btn-primary" type="button">BUY!</button>
+					<button class="btn btn-block btn-primary" type="button" ng-click="addCart(product.price)">BUY!</button>
 
 				</div>
 
@@ -61,7 +67,7 @@
 
 	<div style="width: 100%; margin: 50px 0px; float: left; text-align: center;">
 
-		<button class="btn btn-primary btn-lg btn-outline" type="button">See More...</button>
+		<button class="btn btn-primary btn-lg btn-outline" type="button" ng-click="go('mens/categories')">See More...</button>
 
 	</div>
 

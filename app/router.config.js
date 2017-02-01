@@ -22,9 +22,15 @@ function config($routeProvider) {
 		controllerAs: 'vm'
 	})
 
-	.when('/category/mens', {
-		templateUrl : 'app/pages/layout/mens.html',
-		controller  : 'mensController',
+	.when('/mens/categories', {
+		templateUrl : 'app/pages/layout/categories.html',
+		controller  : 'mensCategoriesController'
+	})
+
+	.when('/mens/categories/list', {
+		templateUrl : 'app/pages/layout/categorie.html',
+		controller  : 'mensCategorieController',
 		controllerAs: 'vm'
-	});
+	})
+
 }
