@@ -22,7 +22,7 @@ function mensController($scope, $location, $filter, filterFilter, $timeout) {
 		$scope.totalItems = $scope.filtered.length;
 		$scope.entryLimit = 4;
 		$scope.noOfPages = Math.ceil($scope.totalItems / $scope.entryLimit);
-		
+
 		for (var i = 1; i <= $scope.noOfPages; i++) {
 			$scope.pagination.push(i);
 		}
@@ -41,6 +41,7 @@ function mensController($scope, $location, $filter, filterFilter, $timeout) {
 
 	$scope.toPage = function(i){
 		$scope.currentPage = i;
+		$window.scrollTo(0, 0);
 	}
 
 } 
