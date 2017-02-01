@@ -32,7 +32,7 @@
 							<a>My Account</a>
 						</li>
 						<li class="item-cart">
-							<a>Cart (0)</a>
+							<a>Cart ({{cart}})</a>
 						</li>
 					</ul>
 
@@ -151,9 +151,12 @@
 <script src="lib/angularjs/angular-route.min.js"></script>
 <script src="lib/angularjs/angular-touch.js"></script>
 <script src="lib/angularjs/angular-carousel.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-filter/0.5.14/angular-filter.min.js"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular-animate.min.js"></script>
+<script type="text/javascript" src="app/pages/filtros/dirPagination.js"></script>
 <script src="js/app.js"></script>
 <script src="app/router.config.js"></script>
-<script src="app/pages/controllers/mensController.js"></script>
+<script src="app/pages/controllers/mensCategorieController.js"></script>
+<script src="app/pages/controllers/mensCategoriesController.js"></script>
 <script src="app/pages/controllers/myaccountController.js"></script>
 </html>
