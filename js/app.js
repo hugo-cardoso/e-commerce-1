@@ -18,16 +18,52 @@ function appController($scope, $location, $window) {
 	$scope.featured = 
 	[{
 		"title":"Shoes Polo HPC White",
-		"categoria": "Shoes"
+		"category": "Shoes",
+		"gender": "M"
 	},{
 		"title":"Shoes Polo HPC Gray",
-		"categoria": "Shoes"
+		"category": "Shoes",
+		"gender": "M"
 	},{
 		"title":"Mocassim Mr.Kitsch Drive Bailey Brown",
-		"categoria": "Shoes"
+		"category": "Shoes",
+		"gender": "M"
 	},{
 		"title":"Lacoste Red Chess Shirt",
-		"categoria": "Shirt"
+		"category": "Shirt",
+		"gender": "M"
+	},{
+		"title":"Mocassim Mr.Kitsch Drive Bailey Brown",
+		"category": "Shoes",
+		"gender": "M"
+	},{
+		"title":"Lacoste Red Chess Shirt",
+		"category": "Shirt",
+		"gender": "M"
+	},{
+		"title":"Lacoste Red Chess Shirt",
+		"category": "Shirt",
+		"gender": "F"
+	},{
+		"title":"Lacoste Red Chess Shirt",
+		"category": "Shirt",
+		"gender": "F"
+	},{
+		"title":"Lacoste Red Chess Shirt",
+		"category": "Shirt",
+		"gender": "F"
+	},{
+		"title":"Lacoste Red Chess Shirt",
+		"category": "Shirt",
+		"gender": "F"
+	},{
+		"title":"Lacoste Red Chess Shirt",
+		"category": "Shirt",
+		"gender": "F"
+	},{
+		"title":"Lacoste Red Chess Shirt",
+		"category": "Shirt",
+		"gender": "F"
 	}
 	];
 
@@ -40,6 +76,8 @@ function appController($scope, $location, $window) {
 
 			$scope.menu = false;
 		}
+
+		$window.scrollTo(0, 0);
 
 	};
 

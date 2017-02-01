@@ -14,12 +14,19 @@ function mensController($scope, $location, $filter, filterFilter, $timeout) {
 
 	$scope.search = {"Shoes":true,"Shirt":true};
 
+	$scope.pagination = [];
+
 	// pagination controls
 	$timeout(function() {
 		$scope.currentPage = 1;
-		$scope.totalItems = $scope.featured.length;
-		$scope.entryLimit = 6;
+		$scope.totalItems = $scope.filtered.length;
+		$scope.entryLimit = 4;
 		$scope.noOfPages = Math.ceil($scope.totalItems / $scope.entryLimit);
+		
+		for (var i = 1; i <= $scope.noOfPages; i++) {
+			$scope.pagination.push(i);
+		}
+
 	});
 
 	// Filtro
@@ -31,5 +38,9 @@ function mensController($scope, $location, $filter, filterFilter, $timeout) {
 			}
 		}
 	};
+
+	$scope.toPage = function(i){
+		$scope.currentPage = i;
+	}
 
 } 

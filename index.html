@@ -28,7 +28,7 @@
 						<li ng-repeat="item in menuItems" ng-class="navClass('{{item.Title}}')" class="item" ng-click="go(item.Title)">
 							<a>{{item.LinkText}}</a>
 						</li>
-						<li class="item-cart">
+						<li class="item-cart" ng-click="go('myaccount')">
 							<a>My Account</a>
 						</li>
 						<li class="item-cart">
@@ -61,7 +61,9 @@
 
 				<div class="side-menu-content">
 
-
+					<div style="padding: 10px;">
+						<button class="btn btn-primary btn-lg btn-block active" ng-click="go('myaccount')">My Account</button>
+					</div>
 
 					<ul>
 						<li ng-repeat="item in menuItems" ng-class="navClass('{{item.Title}}')" class="item" ng-click="go(item.Title)">
@@ -76,7 +78,7 @@
 		</nav>
 	</div>
 
-	<div class="container-fluid" id="view" ng-view></div>
+	<div style="width: 100%;" id="view" ng-view></div>
 
 	<footer>
 
@@ -153,4 +155,5 @@
 <script src="js/app.js"></script>
 <script src="app/router.config.js"></script>
 <script src="app/pages/controllers/mensController.js"></script>
+<script src="app/pages/controllers/myaccountController.js"></script>
 </html>
