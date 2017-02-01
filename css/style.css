@@ -46,20 +46,20 @@ address{
 #view.ng-move,
 #view.ng-enter,
 #view.ng-leave {
-  -webkit-transition:all linear 0.2s;
-  transition:all linear 0.2s;
+	-webkit-transition:all linear 0.2s;
+	transition:all linear 0.2s;
 }
 
 #view.ng-leave.ng-leave-active,
 #view.ng-move,
 #view.ng-enter {
-  opacity:0;
+	opacity:0;
 }
 
 #view.ng-leave,
 #view.ng-move.ng-move-active,
 #view.ng-enter.ng-enter-active {
-  opacity:1;
+	opacity:1;
 }
 
 /*Forms*/
@@ -398,20 +398,20 @@ input.block{
 .product.ng-move,
 .product.ng-enter,
 .product.ng-leave {
-  -webkit-transition:all linear 0.5s;
-  transition:all linear 0.2s;
+	-webkit-transition:all linear 0.5s;
+	transition:all linear 0.2s;
 }
 
 .product.ng-leave.ng-leave-active,
 .product.ng-move,
 .product.ng-enter {
-  opacity:0;
+	opacity:0;
 }
 
 .product.ng-leave,
 .product.ng-move.ng-move-active,
 .product.ng-enter.ng-enter-active {
-  opacity:1;
+	opacity:1;
 }
 
 /*Mobile Styles*/
@@ -419,6 +419,38 @@ input.block{
 
 	.box .btn.btn-primary{
 		padding: 20px !important;
+	}
+
+}
+
+/*Categorys*/
+
+.box-categories{
+	background-color: #FFF; 
+	height: 150px; 
+	display: flex;
+	border: 2px solid transparent;
+	-webkit-transition: 0.5s;
+	-webkit-box-shadow: 0px 2px 11px -2px rgba(0,0,0,0.43);
+	-moz-box-shadow: 0px 2px 11px -2px rgba(0,0,0,0.43);
+	box-shadow: 0px 2px 11px -2px rgba(0,0,0,0.43);
+}
+
+.box-categories:hover{
+	border: 2px solid black;
+}
+
+.box-categories > h2{
+	margin: auto; 
+	font-weight: 300;
+	text-transform: uppercase;
+}
+
+/*Mobile Styles*/
+@media screen and (max-width: 500px) {
+
+	.box-categories{
+		height: 75px; 
 	}
 
 }
@@ -497,6 +529,7 @@ input.block{
 	-webkit-transition: 0.5s;
 	font-weight: 700;
 	text-transform: uppercase;
+	cursor: pointer;
 }
 
 .btn.btn-lg{
@@ -595,4 +628,10 @@ footer address{
 		padding-bottom: 25px;
 	}
 
+}
+
+/*Pagination*/
+
+.pagination{
+	width: 100%;
 }
