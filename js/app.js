@@ -4,12 +4,13 @@ angular
 	'angular-carousel',
 	'ngAnimate',
 	'angular.filter',
-	'angularUtils.directives.dirPagination'
+	'angularUtils.directives.dirPagination',
+	'ngCart'
 	])
 .controller('appController' , appController)
 .controller('menuController' , menuController)
 
-function appController($scope, $location, $window, $http, $filter,$timeout) { 
+function appController($scope, $location, $window, $http, $filter,$timeout,$rootScope, ngCart) { 
 
 	var vm = this;
 
@@ -62,19 +63,19 @@ function appController($scope, $location, $window, $http, $filter,$timeout) {
 
 	$scope.cart = 0;
 
-	$scope.addCart = function(price){
-		$scope.cart = $scope.cart + price;
+	$rootScope.addCart = function(price){
+		$scope.cart = price;
+		$scope.cart1 = price;
 		$timeout(function(){
 			$scope.$apply();
 		})
-		console.log($scope.cart);
 	}
 
 
 
 }
 
-function menuController($scope, $window, $location, $timeout) {
+function menuController($scope, $window, $location, $timeout, ngCart) {
 
 	// Menu items
 
@@ -106,10 +107,6 @@ function menuController($scope, $window, $location, $timeout) {
 		})
 
 		$scope.$digest();
-	});
-
-	$scope.$on('$destroy', function() {
-		window.onscroll = null;
 	});
 
 }
