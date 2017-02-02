@@ -32,7 +32,7 @@
 							<a>My Account</a>
 						</li>
 						<li class="item-cart">
-							<a>Cart ({{cart}})</a>
+							<ngcart-summary></ngcart-summary>
 						</li>
 					</ul>
 
@@ -47,7 +47,9 @@
 				<div class="logo">
 					<span>LOGO</span>
 				</div>
-				<div class="cart">CART (0)</div>
+				<div class="cart">
+					<ngcart-summary></ngcart-summary>
+				</div>
 			</div>
 			<div class="sides">
 				<div class="btn-toggle" ng-click="toggleMenu()">
@@ -153,6 +155,7 @@
 <script src="lib/angularjs/angular-carousel.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-filter/0.5.14/angular-filter.min.js"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular-animate.min.js"></script>
+<script type="text/javascript" src="https://cdn.rawgit.com/snapjay/ngCart/0.0.3-rc.2/dist/ngCart.js"></script>
 <script type="text/javascript" src="app/pages/filtros/dirPagination.js"></script>
 <script src="js/app.js"></script>
 <script src="app/router.config.js"></script>
