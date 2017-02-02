@@ -205,14 +205,7 @@ input.block{
 		box-shadow: 0px 5px 14px 1px rgba(33,33,33,0.44);
 	}
 
-	.menu-mobile > div.sides:first-child{
-		width: 69.9%;
-		height: 100%;
-		float: left;
-		align-items: center;
-	}
-
-	.menu-mobile > div > div.logo{
+	.menu-mobile > .menu-content div > div.logo{
 		width: 50px;
 		height: 50px;
 		margin: 10px;
@@ -222,12 +215,12 @@ input.block{
 		display: flex;
 	}
 
-	.menu-mobile > div > div.logo > span{
+	.menu-mobile > .menu-content div > div.logo > span{
 		margin: auto;
 		font-size: 0.8rem;
 	}
 
-	.menu-mobile > div > div.cart{
+	.menu-mobile .cart{
 		height: 50px;
 		line-height: 50px;
 		margin: 10px;
@@ -235,7 +228,7 @@ input.block{
 		color: #FFF;
 	}
 
-	.menu-mobile > div > div.btn-toggle{
+	.menu-mobile  div.btn-toggle{
 		width: 50px;
 		height: 50px;
 		margin: 10px;
@@ -244,7 +237,7 @@ input.block{
 		display: flex;
 	}
 
-	.menu-mobile > div > div.btn-toggle > i{
+	.menu-mobile  div.btn-toggle > i{
 		margin: auto;
 		color: #FFF;
 	}
