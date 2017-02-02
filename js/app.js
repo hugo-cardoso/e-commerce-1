@@ -61,18 +61,6 @@ function appController($scope, $location, $window, $http, $filter,$timeout,$root
 		console.log("Top");
 	}
 
-	$scope.cart = 0;
-
-	$rootScope.addCart = function(price){
-		$scope.cart = price;
-		$scope.cart1 = price;
-		$timeout(function(){
-			$scope.$apply();
-		})
-	}
-
-
-
 }
 
 function menuController($scope, $window, $location, $timeout, ngCart) {
