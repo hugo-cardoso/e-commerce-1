@@ -4,11 +4,11 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
-	<link rel="stylesheet" href="css/grid.css">
-	<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="css/grid.css">
+	<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,700">
 	<link rel="stylesheet" type="text/css" href="css/materialdesignicons.min.css">
 	<link rel="stylesheet" type="text/css" href="css/angular-carousel.css">
-	<title>Loja Template</title>
+	<title>E-commerce{1}</title>
 </head>
 <body ng-controller="appController as app">
 
@@ -28,10 +28,10 @@
 						<li ng-repeat="item in menuItems" ng-class="navClass('{{item.Title}}')" class="item" ng-click="go(item.Title)">
 							<a>{{item.LinkText}}</a>
 						</li>
-						<li class="item-cart" ng-click="go('myaccount')">
+						<li class="menu-item-cart" ng-click="go('myaccount')">
 							<a>My Account</a>
 						</li>
-						<li class="item-cart">
+						<li class="menu-item-cart" ng-click="go('cart')">
 							<ngcart-summary></ngcart-summary>
 						</li>
 					</ul>
@@ -51,7 +51,7 @@
 					</div>
 				</div>
 
-				<div class="cart" style="float: left;">
+				<div class="cart" style="float: left;" ng-click="go('cart')">
 					<ngcart-summary></ngcart-summary>
 				</div>
 
@@ -86,7 +86,7 @@
 		</nav>
 	</div>
 
-	<div style="width: 100%;" id="view" ng-view></div>
+	<div style="width: 100%; min-height: 350px;" id="view" ng-view></div>
 
 	<footer>
 
@@ -159,13 +159,23 @@
 <script src="lib/angularjs/angular-route.min.js"></script>
 <script src="lib/angularjs/angular-touch.js"></script>
 <script src="lib/angularjs/angular-carousel.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-filter/0.5.14/angular-filter.min.js"></script>
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular-animate.min.js"></script>
-<script type="text/javascript" src="https://cdn.rawgit.com/snapjay/ngCart/0.0.3-rc.2/dist/ngCart.js"></script>
-<script type="text/javascript" src="app/pages/filtros/dirPagination.js"></script>
-<script src="js/app.js"></script>
+<script src="lib/angularjs/angular-filter.min.js"></script>
+<script src="lib/angularjs/angular-animate.min.js"></script>
+<script src="lib/angularjs/ngCart.js"></script>
+<script src="app/pages/filtros/dirPagination.js"></script>
+
+<!-- App  -->
+
+<script src="app/app.js"></script>
 <script src="app/router.config.js"></script>
-<script src="app/pages/controllers/mensCategorieController.js"></script>
+
+<!-- Controllers -->
+
+<script src="app/pages/controllers/categorieController.js"></script>
 <script src="app/pages/controllers/mensCategoriesController.js"></script>
+<script src="app/pages/controllers/womenCategoriesController.js"></script>
 <script src="app/pages/controllers/myaccountController.js"></script>
+<script src="app/pages/controllers/cartController.js"></script>
+<script src="app/pages/controllers/productController.js"></script>
+
 </html>

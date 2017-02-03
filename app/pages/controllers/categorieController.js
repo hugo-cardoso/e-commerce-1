@@ -1,35 +1,25 @@
 angular
 .module('app')
-.controller('categorieController' , categorieController).filter('startFrom', function () {
-	return function (input, start) {
-		if (input) {
-			start = +start;
-			return input.slice(start);
-		}
-		return [];
-	};
-});
+.controller('categorieController' , categorieController);
 
-function categorieController($scope, $location, $filter, filterFilter, $timeout, $window) {
+function categorieController($scope, $location, $filter, filterFilter, $timeout, $window, $rootScope) {
 
-	$scope.pagination = [];
+	$timeout(function(){
 
-	// pagination controls
-	$timeout(function() {
-		$scope.currentPage = 1;
-		$scope.totalItems = $scope.filtered.length;
-		$scope.entryLimit = 8;
-		$scope.noOfPages = Math.ceil($scope.totalItems / $scope.entryLimit);
-
-		for (var i = 1; i <= $scope.noOfPages; i++) {
-			$scope.pagination.push(i);
+		if(!$scope.filterGender || !$scope.filterCategory){
+			console.log("Opa!" + $location.path().split("/")[1])
+			$location.url( $location.path().split("/")[1] + '/categories')
 		}
 
-	});
+	})
 
-	$scope.toPage = function(i){
-		$scope.currentPage = i;
-		$window.scrollTo(0, 0);
+	$scope.openProduct = function(id){
+		
+		$rootScope.idProduct = id;
+
+		$scope.go($location.path().split("/")[1] + '/categories/list/view');
+
 	}
+
 
 } 

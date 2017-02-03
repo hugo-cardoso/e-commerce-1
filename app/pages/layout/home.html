@@ -31,7 +31,7 @@
 
 		<div class="products">
 
-			<div class="col-lg-25 col-md-50 col-sm-50 padding-grid product" ng-repeat="product in products | limitTo: 4">
+			<div class="col-lg-25 col-md-50 col-sm-50 padding-grid product" ng-repeat="product in products | limitTo: limitShow">
 
 				<div class="box">
 
@@ -39,7 +39,7 @@
 
 					<div style="max-width: 100%; height: 250px; overflow: hidden; position: relative;">
 
-						<img style="position: absolute;  left: 50%;  top: 50%;  height: 100%;  width: auto;  -webkit-transform: translate(-50%,-50%);      -ms-transform: translate(-50%,-50%);transform: translate(-50%,-50%);" ng-src="{{product.imgThumbnail || 'img/thumbnail-placelholder.png'}}">
+						<img style="position: absolute; left: 50%; top: 50%; height: 100%;  width: auto; -webkit-transform: translate(-50%,-50%);      -ms-transform: translate(-50%,-50%);transform: translate(-50%,-50%);" ng-src="{{product.imgThumbnail || 'img/thumbnail-placelholder.png'}}">
 
 					</div>
 
@@ -55,7 +55,7 @@
 						</div>
 					</div>
 
-					<ngcart-addtocart style="width: 100%;" id="{{product.title}}" name="{{product.title}}" price="{{product.price}}" quantity="1" quantity-max="5">Add to Cart</ngcart-addtocart>
+					<ngcart-addtocart style="width: 100%;" id="{{product.id}}" name="{{product.title}}" price="{{product.price}}" quantity="1" quantity-max="5" data="{'image': product.imgThumbnail}">Add to Cart</ngcart-addtocart>
 
 
 			</div>
@@ -68,7 +68,7 @@
 
 <div style="width: 100%; margin: 50px 0px; float: left; text-align: center;">
 
-	<button class="btn btn-primary btn-lg btn-outline" type="button" ng-click="go('mens/categories')">See More...</button>
+	<button class="btn btn-primary btn-lg btn-outline" type="button" ng-click="limitShow = limitShow + 4" ng-hide="limitShow >= products.length">See More...</button>
 
 </div>
 

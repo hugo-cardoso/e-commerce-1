@@ -1,0 +1,50 @@
+
+<div class="alert alert-warning" role="alert" ng-show="ngCart.getTotalItems() === 0" style="text-align: center;">
+    Your cart is empty
+</div>
+
+<div style="width: 100%;" ng-show="ngCart.getTotalItems() > 0">
+    <ul style="list-style: none;margin: 0px;padding: 0px;">
+        <li ng-repeat="item in ngCart.getCart().items track by $index" class="item-cart">
+            <div class="col-md-10 col-xs-100 item-cart-grid" align="center">
+                <button style="margin: auto;" class="btn btn-primary" ng-click="ngCart.removeItemById(item.getId())">x</button>
+            </div>
+            <div class="col-md-10 col-xs-100 item-cart-grid" align="center">
+                <img ng-src="{{item.getData().image || 'img/thumbnail-placelholder.png'}}">
+            </div>
+            <div class="col-md-70 col-xs-100 item-cart-grid">
+                <p>
+                    {{item.getName()}}<br>
+                    <span style="color: #cecece;">{{item.getQuantity()}}x</span>
+                </p>
+            </div>
+            <div class="col-md-10 col-xs-100 item-cart-grid">
+                <p>
+                    {{ item.getTotal() | currency }}
+                </p>
+            </div>
+        </li>
+        <li class="item-footer">
+            <div class="col-md-80 col-xs-100 item-footer-grid" align="center">
+                <p>
+                    Zipcode: <input class="gray" type="text"></input>
+                </p>
+            </div>
+            <div class="col-md-10 col-xs-100 item-footer-grid" align="center">
+                <p style="margin: auto;">
+                    Total:
+                </p>
+            </div>
+            <div class="col-md-10 col-xs-100 item-footer-grid">
+                <p class="total-cost">
+                    {{ ngCart.totalCost() | currency }}
+                </p>
+            </div>
+        </li>
+    </ul>
+
+    <div class="col-md-offset-80 col-md-20 col-xs-100 item-footer-grid" align="center">
+        <button type="button" class="btn btn-primary btn-block">Checkout!</button>
+    </div>
+
+</div>

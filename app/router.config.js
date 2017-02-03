@@ -22,6 +22,14 @@ function config($routeProvider) {
 		controllerAs: 'vm'
 	})
 
+	.when('/cart', {
+		templateUrl : 'app/pages/layout/cart.html',
+		controller  : 'cartController',
+		controllerAs: 'vm'
+	})
+
+	// Mens
+
 	.when('/mens/categories', {
 		templateUrl : 'app/pages/layout/categories.html',
 		controller  : 'mensCategoriesController'
@@ -29,7 +37,32 @@ function config($routeProvider) {
 
 	.when('/mens/categories/list', {
 		templateUrl : 'app/pages/layout/categorie.html',
-		controller  : 'mensCategorieController',
+		controller  : 'categorieController',
+		controllerAs: 'vm'
+	})
+
+	.when('/mens/categories/list/view', {
+		templateUrl : 'app/pages/layout/product.html',
+		controller  : 'productController',
+		controllerAs: 'vm'
+	})
+
+	// Women
+
+	.when('/women/categories', {
+		templateUrl : 'app/pages/layout/categories.html',
+		controller  : 'womenCategoriesController'
+	})
+
+	.when('/women/categories/list', {
+		templateUrl : 'app/pages/layout/categorie.html',
+		controller  : 'categorieController',
+		controllerAs: 'vm'
+	})
+
+	.when('/women/categories/list/view', {
+		templateUrl : 'app/pages/layout/product.html',
+		controller  : 'productController',
 		controllerAs: 'vm'
 	})
 
