@@ -8,7 +8,7 @@
 			<div></div>
 		</div>
 
-		<div class="col-md-33 padding-grid" ng-repeat="product in products | filter:{gender: gender} | unique:'category'">
+		<div class="col-md-33 padding-grid" ng-repeat="product in products | filter:{gender: gender} | unique:'categoryName'">
 			
 			<div class="box-categories" ng-click="go( product.gender + '/categories/list'); setFilter(product.gender,product.category);">
 

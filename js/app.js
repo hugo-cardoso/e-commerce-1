@@ -11,7 +11,7 @@ angular
 .controller('appController' , appController)
 .controller('menuController' , menuController)
 
-function appController($scope, $location, $window, $http, $filter,$timeout,$rootScope, ngCart, $firebaseArray) { 
+function appController($scope, $location, $window, $filter,$timeout,$rootScope, ngCart, $firebaseArray) { 
 
 	var vm = this;
 
@@ -22,6 +22,10 @@ function appController($scope, $location, $window, $http, $filter,$timeout,$root
 	var ref = firebase.database().ref().child("products");
 
 	$scope.products = $firebaseArray(ref);
+
+	console.log($scope.products);
+
+	alert("ok";)
 
 	// Change Router
 
@@ -59,16 +63,6 @@ function appController($scope, $location, $window, $http, $filter,$timeout,$root
 	$scope.scrollTop = function(){
 		$window.scrollTo(0, 0);
 		console.log("Top");
-	}
-
-	$scope.openProduct = function(id){
-		
-		$rootScope.idProduct = id;
-
-		console.log(id);
-
-		$scope.go($location.path().split("/")[1] + '/view');
-
 	}
 
 }

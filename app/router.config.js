@@ -16,6 +16,12 @@ function config($routeProvider) {
 		controllerAs: 'vm'
 	})
 
+	.when('/home/view', {
+		templateUrl : 'app/pages/layout/product.html',
+		controller  : 'productController',
+		controllerAs: 'vm'
+	})
+
 	.when('/myaccount', {
 		templateUrl : 'app/pages/layout/myaccount.html',
 		controller  : 'myaccountController',

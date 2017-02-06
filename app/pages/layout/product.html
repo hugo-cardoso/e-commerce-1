@@ -4,7 +4,13 @@
 		<button type="button" class="btn btn-primary" onclick="javascript:window.history.go(-1)">back</button>
 	</div>
 
-	<h1>{{product.title}}</h1>
-	<img ng-src="{{product.imgThumbnail}}">
+	<div class="col-md-40 col-xs-100">
+		<img style="width: 100%;" ng-src="{{product.imgThumbnail}}">
+	</div>
+
+	<div class="col-md-60 col-xs-100">
+		<h1>{{product.title}}</h1>
+	</div>
+	
 
 </div>

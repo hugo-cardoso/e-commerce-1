@@ -7,14 +7,13 @@ function productController($scope, $location, $filter, filterFilter, $timeout, $
 
 	$timeout(function(){
 
-		if(!$scope.filterGender || !$scope.filterCategory){
-			console.log("Opa!" + $location.path().split("/")[1])
-			$location.url( $location.path().split("/")[1] + '/categories')
+		if(!$rootScope.idProduct){
+			window.history.go(-1);
 		}
 
 	})
 
-	$scope.product = $filter('filter')($scope.products, {id: $rootScope.idProduct})[0];
+	$scope.product = $filter('filter')($scope.products, {$id: $rootScope.idProduct})[0];
 
 	console.log($scope.product);
 

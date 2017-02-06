@@ -155,6 +155,9 @@
 	</footer>
 
 </body>
+
+<!-- Dependencies -->
+
 <script src="lib/angularjs/angular.min.js"></script>
 <script src="lib/angularjs/angular-route.min.js"></script>
 <script src="lib/angularjs/angular-touch.js"></script>
@@ -162,9 +165,25 @@
 <script src="lib/angularjs/angular-filter.min.js"></script>
 <script src="lib/angularjs/angular-animate.min.js"></script>
 <script src="lib/angularjs/ngCart.js"></script>
+<script src="lib/angularjs/ngCart.js"></script>
 <script src="app/pages/filtros/dirPagination.js"></script>
 
+<script src="lib/firebase/firebase.js"></script>
+<script src="lib/firebase/angularfire.min.js"></script>
+
 <!-- App  -->
+
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyDZ58pOhJ1Lo1WMUn-YJaPADonEYaDlfYg",
+    authDomain: "e-commerce1-bdfd3.firebaseapp.com",
+    databaseURL: "https://e-commerce1-bdfd3.firebaseio.com",
+    storageBucket: "e-commerce1-bdfd3.appspot.com",
+    messagingSenderId: "861317067617"
+  };
+  firebase.initializeApp(config);
+</script>
 
 <script src="app/app.js"></script>
 <script src="app/router.config.js"></script>
@@ -177,5 +196,6 @@
 <script src="app/pages/controllers/myaccountController.js"></script>
 <script src="app/pages/controllers/cartController.js"></script>
 <script src="app/pages/controllers/productController.js"></script>
+
 
 </html>

@@ -31,11 +31,11 @@
 
 		<div class="products">
 
-			<div class="col-lg-25 col-md-50 col-sm-50 padding-grid product" ng-repeat="product in products | limitTo: limitShow">
+			<div class="col-lg-25 col-md-50 col-sm-50 padding-grid product" ng-repeat="(key, product) in products | limitTo: limitShow">
 
 				<div class="box">
 
-					<div ng-click="openProduct(product.id)">
+					<div ng-click="openProduct(product.$id)">
 
 						<div style="max-width: 100%; height: 250px; overflow: hidden; position: relative;">
 
@@ -57,7 +57,7 @@
 
 					</div>
 
-					<ngcart-addtocart style="width: 100%;" id="{{product.id}}" name="{{product.title}}" price="{{product.price}}" quantity="1" quantity-max="5" data="{'image': product.imgThumbnail}">Add to Cart</ngcart-addtocart>
+					<ngcart-addtocart style="width: 100%;" id="{{product.$id}}" name="{{product.title}}" price="{{product.price}}" quantity="1" quantity-max="5" data="{'image': product.imgThumbnail}">Add to Cart</ngcart-addtocart>
 
 
 				</div>

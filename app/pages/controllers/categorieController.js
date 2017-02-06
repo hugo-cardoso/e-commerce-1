@@ -19,6 +19,8 @@ function categorieController($scope, $location, $filter, filterFilter, $timeout,
 
 		$scope.go($location.path().split("/")[1] + '/categories/list/view');
 
+		console.log($rootScope.idProduct);
+
 	}
 
 
